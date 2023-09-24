@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MVVM.Login.Views.Startup.LoginPage" 
+                Shell.NavBarIsVisible="False">
+
+    <ContentView Margin="0,-250,0,0">
+        <VerticalStackLayout
+                Spacing="25"
+                Padding="20,0"
+                VerticalOptions="Center">
+
+            <Grid 
+                RowDefinitions="1*,8*,1*">
+                <Frame 
+                    BackgroundColor="#232c4b" 
+                    Grid.Row="0" 
+                    HorizontalOptions="EndAndExpand"
+                    Padding="0,20,0,0" 
+                    HeightRequest="250" 
+                    WidthRequest="250" 
+                    CornerRadius="125" 
+                    Margin="0,-80,-80,0">
+                </Frame>
+
+                <Frame 
+                    BackgroundColor="#00ab9b" 
+                    Grid.Row="0"
+                    HorizontalOptions="EndAndExpand"
+                    Padding="0,20,0,0" 
+                    HeightRequest="250" 
+                    WidthRequest="250" 
+                    CornerRadius="125" 
+                    Margin="0,-120,-120,0">
+                </Frame>
+            </Grid>
+
+            <VerticalStackLayout >
+                <Label 
+                    Text="Bienvenido!" 
+                    FontSize="15" 
+                    TextColor="Gray" 
+                    HorizontalTextAlignment="Center"/>
+
+                <Label 
+                    Text="Inicie sesión para continuar" 
+                    FontSize="13" 
+                    TextColor="Gray" 
+                    HorizontalTextAlignment="Center"/>
+            </VerticalStackLayout>
+
+            <StackLayout 
+                Orientation="Horizontal">
+                <Frame 
+                    ZIndex="1" 
+                    HasShadow="True" 
+                    BorderColor="White" 
+                    HeightRequest="56" 
+                    WidthRequest="56" 
+                    CornerRadius="28">
+
+                    <Image 
+                        Source="usuario.png" 
+                        HeightRequest="20"
+                        WidthRequest="20"/>
+                </Frame>
+
+                <Frame 
+                    HeightRequest="45" 
+                    Margin="20,0,0,0" 
+                    Padding="0" 
+                    HasShadow="True" 
+                    BorderColor="White" 
+                    HorizontalOptions="FillAndExpand">
+
+                    <Entry 
+                        Margin="20,0,0,0" 
+                        Text="{Binding Email}" 
+                        VerticalOptions="Center" 
+                        Placeholder="Nombre de usuario" 
+                        Keyboard="Email"/>
+                </Frame>
+            </StackLayout>
+
+            <StackLayout 
+                Orientation="Horizontal">
+                <Frame 
+                    ZIndex="1" 
+                    HasShadow="True" 
+                    BorderColor="White" 
+                    HeightRequest="56" 
+                    WidthRequest="56"
+                    CornerRadius="28">
+
+                    <Image 
+                        Source="candado.png" 
+                        HeightRequest="20" 
+                        WidthRequest="20"/>
+                </Frame>
+
+                <Frame 
+                    HeightRequest="45" 
+                    Margin="20,0,0,0" 
+                    Padding="0" 
+                    HasShadow="True" 
+                    BorderColor="White" 
+                    HorizontalOptions="FillAndExpand">
+
+                    <Entry 
+                        Margin="20,0,0,0" Text="{Binding Password}" 
+                        VerticalOptions="Center" Placeholder="Contraseña" 
+                        IsPassword="True" Keyboard="Email" />
+                </Frame>
+            </StackLayout>
+
+            <Button 
+                Text="Iniciar sesión" 
+                WidthRequest="120" 
+                CornerRadius="20" 
+                HorizontalOptions="Center" 
+                BackgroundColor="#232c4b" 
+                Command="{Binding LoginCommand}"/>
+        </VerticalStackLayout>
+    </ContentView>
+</ContentPage>
