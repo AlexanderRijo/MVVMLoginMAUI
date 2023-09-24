@@ -1,2 +1,2 @@
 # MVVMLoginMAUI
-Simple login developed in .NET MAUI to understand how it works
+This login was developed to better understand how .NET MAUI works.
